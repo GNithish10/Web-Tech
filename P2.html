@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div id="text">TEXT GROWING</div>
+
+	<script>
+		const textElem = document.getElementById('text');
+		let fontSize = 5;
+		let growing = true;
+		function updateText() {
+			if (growing){
+				fontSize+=1;
+				textElem.style.fontSize = fontSize + 'pt';
+				textElem.style.color = 'blue';
+				textElem.textContent = 'TEXT-GROWING';
+				if (fontSize >= 50) {
+					growing = false;
+				}
+			} else {
+				fontSize -=1;
+				textElem.style.fontSize = fontSize + 'pt';
+				textElem.style.color = 'green';
+				textElem.textContent = 'TEXT-SHRINKING';
+				if (fontSize <= 5) {
+					growing = true;
+				}
+			}
+		}
+		setInterval(updateText, 100)
+	</script>
+</body>
+</html>
