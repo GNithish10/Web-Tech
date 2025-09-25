@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>Simple Calculator</h2>
+	<input type="number" name="op1" id="op1" placeholder="Enter First Number">
+	<select id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="number" name="op2" id="op2" placeholder="Enter Second Number">
+	<button onclick="calculate()">Calculate</button>
+	<div id="result"></div>
+
+<script>
+	function calculate(){
+		const op1 = parseFloat(document.getElementById('op1').value);
+		const op2 = parseFloat(document.getElementById('op2').value);
+		const op = document.getElementById('op').value;
+		const resultDiv = document.getElementById('result');
+
+		if (isNaN(op1) || isNaN(op2)){
+			resultDiv.textContent = "Please enter valid numbers.";
+			return;
+		}
+
+		let result;
+		switch (op){
+		case '+':
+			result = op1 + op2;
+			break;
+
+		case '-':
+			result = op1 - op2;
+			break;
+
+		case '*':
+			result = op1 * op2;
+			break;
+
+		case '/':
+			if (op2 == 0){
+				resultDiv.textContent = "Please enter a valid number for division.";
+				return;
+			}
+			result = op1 / op2;
+			break;
+
+		default:
+			resultDiv.textContent = "Please enter a valid operator.";
+			return;
+		}
+
+		resultDiv.textContent = `Result: ${result}`;
+		console.log(result)
+	}
+</script>
+</body>
+</html>
