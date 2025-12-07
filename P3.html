@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form Validation</title>
+
+<link rel="stylesheet" href="3styles.css">
+
+<style>
+body{font-family:Arial,sans-serif;background:#f3f6fa;margin:40px;}
+h2{text-align:center;color:#004085;}
+
+form{
+ background:#fff;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.1);
+ width:400px;margin:auto;padding:20px;
+}
+
+label{display:block;margin-top:10px;font-weight:bold;}
+
+input[type=text],input[type=password],input[type=email]{
+ width:95%;padding:8px;margin-top:5px;border-radius:5px;border:1px solid #ccc;
+}
+
+input[type=submit]{
+ background:#007bff;color:#fff;border:none;padding:10px 20px;
+ border-radius:5px;margin-top:15px;cursor:pointer;
+}
+input[type=submit]:hover{background:#0056b3;}
+
+.error{color:red;font-size:.9em;}
+</style>
+
+<script>
+function validateForm(){
+ let n=document.getElementById("name").value.trim(),
+     p=document.getElementById("password").value.trim(),
+     e=document.getElementById("email").value.trim(),
+     m=document.getElementById("mobile").value.trim(),
+     v=true;
+
+ nameError.innerHTML=passError.innerHTML=emailError.innerHTML=mobileError.innerHTML="";
+
+ if(!/^[A-Za-z]+$/.test(n)||n.length<6){nameError.innerHTML="Name must contain only alphabets and be at least 6 characters long.";v=false;}
+
+ if(p.length<6){passError.innerHTML="Password must be at least 6 characters long.";v=false;}
+
+ if(!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/.test(e)){emailError.innerHTML="Please enter a valid email.";v=false;}
+
+ if(!/^\d{10}$/.test(m)){mobileError.innerHTML="Mobile must be exactly 10 digits.";v=false;}
+
+ return v;
+}
+</script>
+
+</head>
+<body>
+
+<h2 style="text-decoration:underline;color:darkblue;">Registration Page</h2>
+
+<form onsubmit="return validateForm()">
+<label>First Name:</label>
+<input type="text" id="name" placeholder="Enter your name">
+<div id="nameError" class="error"></div>
+
+<label>Password:</label>
+<input type="password" id="password" placeholder="Enter your password">
+<div id="passError" class="error"></div>
+
+<label>E-mail ID:</label>
+<input type="email" id="email" placeholder="Enter your email">
+<div id="emailError" class="error"></div>
+
+<label>Mobile Number:</label>
+<input type="text" id="mobile" placeholder="Enter 10-digit number">
+<div id="mobileError" class="error"></div>
+
+<input type="submit" value="Register">
+</form>
+
+</body>
+</html>
