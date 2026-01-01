@@ -1,0 +1,27 @@
+<?xml-stylesheet type="text/css" href="P4.css"?>
+<STUDENTDATA>
+    <STUDENT>
+        <USN>USN : 1BY23CS036</USN>
+        <NAME>NAME : BALAJI</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH :CSE</BRANCH>
+        <YEAR>YEAR : 2023</YEAR>
+        <EMAIL>E-MAIL : 123@bmsit.in</EMAIL>
+    </STUDENT>
+    <STUDENT>
+        <USN>USN : 1BY23CS034</USN>
+        <NAME>NAME : JAI</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH :CSE</BRANCH>
+        <YEAR>YEAR : 2024</YEAR>
+        <EMAIL>E-MAIL : gaha@bmsit.in</EMAIL>
+    </STUDENT>
+        <STUDENT>
+        <USN>USN : 1BY23CS068</USN>
+        <NAME>NAME : NITHISH</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH :CSE</BRANCH>
+        <YEAR>YEAR : 2022</YEAR>
+        <EMAIL>E-MAIL : nithish@bmsit.in</EMAIL>
+    </STUDENT>
+</STUDENTDATA>
